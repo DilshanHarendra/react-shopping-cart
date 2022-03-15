@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
 import siteSettingsReducer from "./siteSettingsReducer";
+import productsReducer from "./productsReducer";
 
 
 
@@ -8,7 +9,7 @@ import siteSettingsReducer from "./siteSettingsReducer";
 
 const rootReducer =combineReducers({
   siteSettings:siteSettingsReducer,
-
+  products:productsReducer
 
 })
 export default rootReducer;
