@@ -9,3 +9,6 @@
 .w-400{
     width: 400px;
 }
+.product-image{
+    aspect-ratio: 4/5;
+}
