@@ -11,6 +11,7 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: ({ colors }) => ({
+      primary:'#f6b022',
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
@@ -113,6 +114,7 @@ module.exports = {
     },
     aspectRatio: {
       auto: 'auto',
+      '4/5':'4 / 5',
       square: '1 / 1',
       video: '16 / 9',
     },
@@ -946,5 +948,8 @@ module.exports = {
     'active',
     'disabled',
   ],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+  ],
 }
