@@ -1,24 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import Product from "../../components/Product";
-import {connect} from "react-redux";
-import {getProducts} from "../../store/actions/productsAction";
 
 function Products(props){
 
 
-    const[loading,setLoading]=useState(true)
-    useEffect(()=>{
-        props.getProducts().then(()=>{
-            setLoading(false)
-        })
-    },[])
-
-
     return(
         <>
-            {!loading&&<div className="w-full ml-5">
+            {<div className="w-full ml-5">
                 <div className="w-full flex items-center justify-between">
-                    <p>{props.products.products.length} Product(s) found</p>
+                    <p>{props.products.length} Product(s) found</p>
 
                     <div className="flex items-center w-1/4">
                         <label htmlFor="" className="whitespace-nowrap">Order by</label>
@@ -27,14 +17,19 @@ function Products(props){
                         </select>
                     </div>
                 </div>
-                <div className="mt-3 grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
-                    {props.products.products.map(product=><Product data={product} key={product.id}/>)}
-                </div>
+                {
+                    props.products.length>0?
+                        <div className="mt-3 grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+                            {props.products.map(product=><Product data={product} key={product.id}/>)}
+                        </div>
+                        :
+                        <div className="w-full mt-3 grid place-items-center h-60">
+                            <p className="font-semibold text-xl">No Products</p>
+                        </div>
+                }
+
             </div>}
         </>
     )
-}const mapStateToProps = state => ({
-    ...state
-});
-export default connect(mapStateToProps,{getProducts})(Products)
+}export default Products
 
