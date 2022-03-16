@@ -22,9 +22,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run css:build && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "css:build": "npx tailwindcss -i ./src/App.css -o ./src/assets/main.css --minify",
     "css:watch": "npx tailwindcss -i ./src/App.css -o ./src/assets/main.css --watch"
   },
   "eslintConfig": {
