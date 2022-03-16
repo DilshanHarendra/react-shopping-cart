@@ -1,4 +1,5 @@
 import {
+    OPEN_CART,
     OPEN_CLOSE_CART
 
 
@@ -15,6 +16,12 @@ export default function siteSettingsReducer(state=init,action){
             return{
                 ...state,
                 isCartOpen:!state.isCartOpen
+            }
+        };
+        case OPEN_CART:{
+            return{
+                ...state,
+                isCartOpen:true
             }
         };
 

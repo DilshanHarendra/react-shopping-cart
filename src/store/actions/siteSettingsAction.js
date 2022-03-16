@@ -1,4 +1,5 @@
 import {
+    OPEN_CART,
     OPEN_CLOSE_CART
 } from "../types/siteSettingsType";
 
@@ -11,5 +12,12 @@ export const openCloseCart = ()=>dispatch=>{
 
 }
 
+export const openCart = ()=>dispatch=>{
+    dispatch({
+        type: OPEN_CART,
+        payload:''
+    })
+
+}
 
 
