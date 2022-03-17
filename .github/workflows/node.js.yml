@@ -29,7 +29,10 @@ jobs:
       run: npm install
     - name: BUILD APP
       run: npm run build
-    - name: SAVE APP
+    - name: CHECKOUT
       uses: peaceiris/actions-gh-pages@v3
+    - name: SAVE APP
       run:  cd ./build
+    - name: VIEW BUILD
+      run: ls
 
