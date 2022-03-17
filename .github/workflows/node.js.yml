@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches:
-    - main
-
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -25,11 +25,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-      - name: NPM INSTALL
-        run: npm install
-      - name: BUILD APP
-        run: npm run build
-      - name: deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-        publish_dir: ./build
+    - name: NPM INSTALL
+      run: npm install
+    - name: BUILD APP
+      run: npm run build
+    - name: SAVE APP
+      uses: peaceiris/actions-gh-pages@v3
+      publish_dir: ./build
