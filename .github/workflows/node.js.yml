@@ -28,7 +28,7 @@ jobs:
 
       - run: npm i
       - run: touch .env
-            echo REACT_APP_API_BASE_URL=${{ secrets.MY_NAME}} >> .env
+            echo REACT_APP_API_BASE_URL=${{ secrets.BASE_URL}} >> .env
       - run: npm run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
