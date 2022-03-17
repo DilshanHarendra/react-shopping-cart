@@ -31,4 +31,5 @@ jobs:
       run: npm run build
     - name: SAVE APP
       uses: peaceiris/actions-gh-pages@v3
-      publish_dir: ./build
+      run:  cd ./build
+
