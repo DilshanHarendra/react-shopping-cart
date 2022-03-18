@@ -2,7 +2,16 @@ import React, {useState} from "react";
 
 function ProductFilters(props){
 
-    const sizes=[{label:'xs',value:'xsmall'},{label:'s',value:'small'},{label:'m',value:'medium'},{label:'ml',value:'ml'},{label:'l',value:'large'},{label:'xl',value:'extraLarge'},{label:'xxl',value:'extraExtraLarge'}]
+    const sizes=[
+        {label:'xs',value:'xsmall'},
+        {label:'s',value:'small'},
+        {label:'m',value:'medium'},
+        {label:'ml',value:'ml'},
+        {label:'l',value:'large'},
+        {label:'xl',value:'extraLarge'},
+        {label:'xxl',value:'extraExtraLarge'}
+    ]
+
     const [currentSize,setCurrentSize]=useState(undefined)
 
     function filterSize(value){
